@@ -26,4 +26,14 @@ class UserController extends Controller
         $data->save();
         return redirect('/');
     }
+    public function show($id){
+        $data = RegDB::find($id);
+        return view('admin.show', compact('data'));
+    }
+    public function index(){
+
+        $data = RegDB::all();
+
+        return view('admin.index',compact('data'));
+    }
 }
