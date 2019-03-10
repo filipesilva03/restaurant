@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use \App\RegDB;
 class UserController extends Controller
 {
     public function home(){
@@ -15,13 +15,15 @@ class UserController extends Controller
     public function contactus(){
     	return view('contactus');
     }
-    public function store(){
-    	// We are just printing it here. 
-    	// in the coming video we will look how to save it in the
-    	// database
-    	// You may have seen that the request() method actually returns
-    	// JSON Value and prints it :)
-    	// We will look in video about this a little more :)
-    	return request()->all();
+    public function store(Request $request){
+        $data = new RegDB;
+        $data->name = $request['name'];
+        $data->mobile = $request['mobile'];
+        $data->email = $request['email'];
+        $data->gender = $request['gender'];
+        $data->city = $request['city'];
+        //return $data; // Just for viewing purpose
+        $data->save();
+        return redirect('/');
     }
 }
