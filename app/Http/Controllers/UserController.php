@@ -22,7 +22,6 @@ class UserController extends Controller
         $data->email = $request['email'];
         $data->gender = $request['gender'];
         $data->city = $request['city'];
-        //return $data; // Just for viewing purpose
         $data->save();
         return redirect('/');
     }
@@ -35,5 +34,19 @@ class UserController extends Controller
         $data = RegDB::all();
 
         return view('admin.index',compact('data'));
+    }
+    public function update(Request $request, $id){
+        $data = RegDB::find($id);
+        $data->name = $request['name'];
+        $data->email = $request['email'];
+        $data->mobile = $request['mobile'];
+        $data->gender = $request['gender'];
+        $data->city = $request['city'];
+        $data->save();
+        return redirect("/uc/$id");
+    }
+    public function edit($id){
+        $data = RegDB::find($id);
+        return view('admin.edit',compact('data'));
     }
 }

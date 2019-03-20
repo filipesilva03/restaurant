@@ -5,7 +5,7 @@
 			Restaurant
 		</a>
 		<div class="navbar-nav">
-			<a href="/" class="nav-item nav-link @yield('menu_home')">Home</a>
+			<a href="/uc" class="nav-item nav-link @yield('menu_home')">Home</a>
 		</div>
 	</div>
 </nav>

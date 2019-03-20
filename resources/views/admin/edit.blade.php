@@ -1,6 +1,5 @@
 @extends('layout')
-@section('title','Register')
-@section('menu_register', 'active')
+@section('title','Edit Form')
 @push('link')
 	<!-- Do not forget to put the correct path as 
 	/css/style.css.
@@ -10,7 +9,7 @@
 @endpush
 
 @section('mycontent')
-	<h1>Registration</h1>
+	<h1>Edit Form</h1>
 <!-- 	Let's now start making the registration form by our own
 	using bootstrap and emmet coding. :) -->
 	<!-- Now lets add some css to it :) -->
@@ -22,35 +21,41 @@
 			but for testing purpose i have mentioned the get method then
 			i will change to post method. -->
 			<!-- Now let's change it to the post method -->
-			<form action="/uc" method="post">
+<!-- 			Now let's pass the $data from the controller
+ -->			<form action="/uc/{{$data->id}}" method="post">
 				<!-- Thus, now we need to add csrf field here for post method -->
 				<!-- You may see that there is no token values or hidden input here.  -->
 				{{csrf_field()}}
+				{{method_field('patch')}}
 				<!-- csrf_field is convereted to hidden input with proper token for security reason :)-->
 				<div class="form-group">
-					<input type="text" name="name" placeholder="name" class="form-control">
+					<input type="text" name="name" placeholder="name" class="form-control" value="{{$data->name}}">
 				</div>
 				<div class="form-group">
-					<input type="text" name="email" placeholder="email" class="form-control">
+					<input type="text" name="email" placeholder="email" class="form-control" value="{{$data->email}}">
 				</div>
 				<div class="form-group">
-					<input type="text" name="mobile" placeholder="mobile" class="form-control">
+					<input type="text" name="mobile" placeholder="mobile" class="form-control" value="{{$data->mobile}}">
 				</div>
-				<div class="form-check">
+<!-- 				We would look on the further values after some time
+	Now its the time for radio button to have the value from db. :) but lets have some trial before that. 
+ -->				<div class="form-check">
 					<label for="">Owner Gender: </label>
-					<input type="radio" name="gender" value="male">
+					<input type="radio" name="gender" value="male" @if($data->gender=="male") checked @endif>
 					<label for="">Male</label>
-					<input type="radio" name="gender" value="female">
+					<input type="radio" name="gender" value="female" @if($data->gender=="female") checked @endif>
 					<label for="">Female</label>
 				</div>
-				<div class="form-group">
+
+<!-- 				Let's try statically to change the data at first. 
+					Okay then now it's working fine. lets code using laravel.
+ -->				<div class="form-group">
 					<label for="">City:</label>
 					<select name="city" id="" class="form-control">
-						<option value="0" selected disabled>Select City</option>
-						<option value="Rajkot">Rajkot</option>
-						<option value="Ahmedabad">Ahmedabad</option>
-						<option value="Vadodara">Vadodara</option>
-						<option value="Surat">Surat</option>
+						<option value="Rajkot" @if($data->city=="Rajkot") selected @endif>Rajkot</option>
+						<option value="Ahmedabad" @if($data->city=="Ahmedabad") selected @endif>Ahmedabad</option>
+						<option value="Vadodara" @if($data->city=="Vadodara") selected @endif>Vadodara</option>
+						<option value="Surat" @if($data->city=="Surat") selected @endif>Surat</option>
 					</select>
 				</div>
 				<!-- here I have mentioned mt-2 for proper spacing between two elements :) -->

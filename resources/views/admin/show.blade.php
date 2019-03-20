@@ -22,5 +22,9 @@
 			<label for="">City:</label>
 			<label for="">{{$data->city}}</label>
 		</div>
+		<div class="row">
+			<a href="/uc/{{$data->id}}/edit" class="btn btn-primary">Edit</a>
+		</div>
 	</div>	
+
 @endsection
