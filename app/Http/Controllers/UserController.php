@@ -49,4 +49,13 @@ class UserController extends Controller
         $data = RegDB::find($id);
         return view('admin.edit',compact('data'));
     }
+    public function destroy($id){
+        //Here with this function I am first finding the id and
+        // then I am deleting it. 
+        RegDB::find($id)->delete();
+        //After deleting it I am going to redirect back to the uc. in my case.
+        //this will call the index method of my controller. 
+        // Okay lemme show you. 
+        return redirect('/uc');
+    }
 }
