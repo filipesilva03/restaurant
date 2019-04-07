@@ -14,6 +14,12 @@ class CreateCountries extends Migration
     public function up()
     {
         //
+        Schema::create('Countries', function(Blueprint $table){
+            $table->increments('Country_Code');
+
+            //Country_code is unsigned integer
+            $table->string('Country_Name',5);
+        });
     }
 
     /**
@@ -24,5 +30,7 @@ class CreateCountries extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('Countries');
+
     }
 }

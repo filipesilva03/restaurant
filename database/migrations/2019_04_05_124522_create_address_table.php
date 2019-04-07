@@ -14,6 +14,10 @@ class CreateAddressTable extends Migration
     public function up()
     {
         //
+        Schema::create('Addresses', function(Blueprint $table){
+            $table->uuid('Address_ID')->primary();
+            $table->text('Address_Details');
+        });
     }
 
     /**
@@ -24,5 +28,6 @@ class CreateAddressTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('Addresses');
     }
 }
