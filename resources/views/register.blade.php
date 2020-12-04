@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Register')
+@section('title','Registos')
 @section('menu_register', 'active')
 @push('link')
 	<!-- Do not forget to put the correct path as 
@@ -10,7 +10,7 @@
 @endpush
 
 @section('mycontent')
-	<h1>Registration</h1>
+	<h1>Registos</h1>
 <!-- 	Let's now start making the registration form by our own
 	using bootstrap and emmet coding. :) -->
 	<!-- Now lets add some css to it :) -->
@@ -28,29 +28,35 @@
 				{{csrf_field()}}
 				<!-- csrf_field is convereted to hidden input with proper token for security reason :)-->
 				<div class="form-group">
-					<input type="text" name="name" placeholder="name" class="form-control">
+					<input type="text" name="name" placeholder="Nome" class="form-control">
 				</div>
 				<div class="form-group">
-					<input type="text" name="email" placeholder="email" class="form-control">
+					<input type="text" name="email" placeholder="Email" class="form-control">
 				</div>
 				<div class="form-group">
-					<input type="text" name="mobile" placeholder="mobile" class="form-control">
+					<input type="text" name="mobile" placeholder="Telemóvel" class="form-control" maxlength="9">
 				</div>
 				<div class="form-check">
-					<label for="">Owner Gender: </label>
+					<label for="">Género: </label>
 					<input type="radio" name="gender" value="male">
-					<label for="">Male</label>
+					<label for="">Masculino</label>
 					<input type="radio" name="gender" value="female">
-					<label for="">Female</label>
+					<label for="">Femenino</label>
 				</div>
 				<div class="form-group">
-					<label for="">City:</label>
+					<label for="">Cidade:</label>
 					<select name="city" id="" class="form-control">
-						<option value="0" selected disabled>Select City</option>
-						<option value="Rajkot">Rajkot</option>
-						<option value="Ahmedabad">Ahmedabad</option>
-						<option value="Vadodara">Vadodara</option>
-						<option value="Surat">Surat</option>
+						<option value="0" selected disabled>Escolha a cidade</option>
+						<option value="Lisboa">Lisboa</option>
+						<option value="Porto">Porto</option>
+						<option value="Coimbra">Coimbra</option>
+						<option value="Braga">Braga</option>
+						<option value="Guimarães">Guimarães</option>
+						<option value="Évora">Évora</option>
+						<option value="Aveiro">Aveiro</option>
+						<option value="Faro">Faro</option>
+						<option value="Beja">Beja</option>
+						<option value="Sintra">Sintra</option>
 					</select>
 				</div>
 				<!-- here I have mentioned mt-2 for proper spacing between two elements :) -->
