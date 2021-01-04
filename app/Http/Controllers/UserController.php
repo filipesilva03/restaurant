@@ -12,6 +12,12 @@ class UserController extends Controller
     public function create(){
     	return view('register');
     }
+    public function seguranca(){
+    	return view('seguranca');
+    }
+    public function logistica(){
+    	return view('logistica');
+    }
     public function contactus(){
     	return view('contactus');
     }

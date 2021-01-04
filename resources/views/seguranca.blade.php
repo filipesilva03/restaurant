@@ -1,6 +1,6 @@
 @extends('layout')
-@section('title','Registo')
-@section('menu_register', 'active')
+@section('title','Segurança')
+@section('menu_seguranca','active')
 @push('link')
 	<!-- Do not forget to put the correct path as 
 	/css/style.css.
@@ -8,9 +8,8 @@
 	we are using controller :) -->
 	<link rel="stylesheet" href="/css/style.css" >
 @endpush
-
 @section('mycontent')
-	<h1>Informática</h1>
+<h1>Segurança</h1>
 <!-- 	Let's now start making the registration form by our own
 	using bootstrap and emmet coding. :) -->
 	<!-- Now lets add some css to it :) -->
@@ -47,22 +46,6 @@
 					<label for="">Femenino</label>
 				</div>
 				<div class="form-group">
-					<label for="">Cidade:</label>
-					<select name="city" id="" class="form-control">
-						<option value="0" selected disabled>Escolha a cidade</option>
-						<option value="Lisboa">Lisboa</option>
-						<option value="Porto">Porto</option>
-						<option value="Coimbra">Coimbra</option>
-						<option value="Braga">Braga</option>
-						<option value="Guimarães">Guimarães</option>
-						<option value="Évora">Évora</option>
-						<option value="Aveiro">Aveiro</option>
-						<option value="Faro">Faro</option>
-						<option value="Beja">Beja</option>
-						<option value="Sintra">Sintra</option>
-					</select>
-				</div>
-				<div class="form-group">
 					<input type="text" placeholder="Rua">
 				</div>
 				<div class="form-group">
@@ -72,18 +55,13 @@
 					<input type="text" placeholder="Código Postal">
 				</div>
 				<div class="form-group">
-					<label for="">Observação do Material:</label>
-					<select name="Material" id="" class="form-control">
-						<option value="0" selected disabled>Material</option>
-						<option value="Computador">Computador</option>
-						<option value="Monitor">Monitor</option>
-						<option value="Rato">Rato</option>
-						<option value="Teclado">Teclado</option>
-						<option value="Webcam">Webcam</option>
+					<label for="">Tipo de cartão:</label>
+					<select name="city" id="" class="form-control">
+						<option value="0" selected disabled>Escolha o cartão</option>
+						<option value="Pessoal">Pessoal</option>
+						<option value="Viatura">Viatura</option>
+
 					</select>
-				</div>
-				<div class="form-group">
-					<input type="text" placeholder="Requisição do Material">
 				</div>
 				<!-- here I have mentioned mt-2 for proper spacing between two elements :) -->
 				<div class="mt-2 form-group">
@@ -96,4 +74,5 @@
 		</div>
 		<div class="col"></div>
 	</div>
+
 @endsection

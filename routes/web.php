@@ -3,6 +3,8 @@
 Route::get('/','UserController@home');
 Route::get('/contactus','UserController@contactus');
 Route::get('/uc/create','UserController@create');
+Route::get('/seguranca','UserController@seguranca');
+Route::get('/logistica','UserController@logistica');
 Route::post('/uc','UserController@store');
 //Remember that once the editing is done the user must go back to the show() method
 // to see that the user is editted properly or not. 

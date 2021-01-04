@@ -1,6 +1,6 @@
 @extends('layout')
-@section('title','Registo')
-@section('menu_register', 'active')
+@section('title','Logística')
+@section('menu_logistica','active')
 @push('link')
 	<!-- Do not forget to put the correct path as 
 	/css/style.css.
@@ -8,9 +8,8 @@
 	we are using controller :) -->
 	<link rel="stylesheet" href="/css/style.css" >
 @endpush
-
 @section('mycontent')
-	<h1>Informática</h1>
+<h1>Logística</h1>
 <!-- 	Let's now start making the registration form by our own
 	using bootstrap and emmet coding. :) -->
 	<!-- Now lets add some css to it :) -->
@@ -39,51 +38,25 @@
 				<div class="form-group">
 					<input type="text" placeholder="Data">
 				</div>
-				<div class="form-check">
-					<label for="">Género: </label>
-					<input type="radio" name="gender" value="male">
-					<label for="">Masculino</label>
-					<input type="radio" name="gender" value="female">
-					<label for="">Femenino</label>
-				</div>
-				<div class="form-group">
-					<label for="">Cidade:</label>
-					<select name="city" id="" class="form-control">
-						<option value="0" selected disabled>Escolha a cidade</option>
-						<option value="Lisboa">Lisboa</option>
-						<option value="Porto">Porto</option>
-						<option value="Coimbra">Coimbra</option>
-						<option value="Braga">Braga</option>
-						<option value="Guimarães">Guimarães</option>
-						<option value="Évora">Évora</option>
-						<option value="Aveiro">Aveiro</option>
-						<option value="Faro">Faro</option>
-						<option value="Beja">Beja</option>
-						<option value="Sintra">Sintra</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<input type="text" placeholder="Rua">
-				</div>
-				<div class="form-group">
-					<input type="text" placeholder="Localidade">
-				</div>
-				<div class="form-group">
-					<input type="text" placeholder="Código Postal">
-				</div>
 				<div class="form-group">
 					<label for="">Observação do Material:</label>
 					<select name="Material" id="" class="form-control">
 						<option value="0" selected disabled>Material</option>
-						<option value="Computador">Computador</option>
-						<option value="Monitor">Monitor</option>
-						<option value="Rato">Rato</option>
-						<option value="Teclado">Teclado</option>
-						<option value="Webcam">Webcam</option>
+						<option value="Ventoinha">Ventoinha</option>
+						<option value="Aquecedor">Aquecedor</option>
+						<option value="penUSB">penUSB</option>
+						<option value="diskete">diskete</option>
 					</select>
 				</div>
 				<div class="form-group">
 					<input type="text" placeholder="Requisição do Material">
+				</div>
+				<div class="form-check">
+					<label for="">Requisição do crachá: </label>
+					<input type="radio" name="crachá" value="sim">
+					<label for="">Sim</label>
+					<input type="radio" name="crachá" value="nao">
+					<label for="">Não</label>
 				</div>
 				<!-- here I have mentioned mt-2 for proper spacing between two elements :) -->
 				<div class="mt-2 form-group">
@@ -96,4 +69,5 @@
 		</div>
 		<div class="col"></div>
 	</div>
+
 @endsection
